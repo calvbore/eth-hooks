@@ -1,4 +1,3 @@
-/* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
 import { Contract } from "@ethersproject/contracts";
 import { Web3Provider, JsonRpcProvider } from "@ethersproject/providers";
@@ -35,6 +34,7 @@ const { ethers } = require("ethers");
   - externalContracts: object with chainIds as keys, with an array of contracts for each
 */
 
+<<<<<<< HEAD:packages/eth-hooks/src/ContractLoader.ts
 type Config = {
   chainId?: number,
   hardhatNetworkName?: string,
@@ -48,6 +48,10 @@ export default function useContractLoader(
   config: Config
 ) {
   const [contracts, setContracts] = useState<{[index: string]: Contract}>();
+
+  const customAddressKeys = config.customAddresses && Object.keys(config.customAddresses).join();
+  const customAddressValues = config.customAddresses && Object.values(config.customAddresses).join();
+
   useEffect(() => {
     let active = true;
 
@@ -130,7 +134,7 @@ export default function useContractLoader(
     return () => {
       active = false;
     };
-  }, [providerOrSigner, config.chainId, config.hardhatNetworkName]);
+  }, [providerOrSigner, config.chainId, config.hardhatNetworkName, customAddressKeys, customAddressValues]);
 
   return contracts;
 }
