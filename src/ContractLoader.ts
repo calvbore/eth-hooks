@@ -34,7 +34,6 @@ const { ethers } = require("ethers");
   - externalContracts: object with chainIds as keys, with an array of contracts for each
 */
 
-<<<<<<< HEAD:packages/eth-hooks/src/ContractLoader.ts
 type Config = {
   chainId?: number,
   hardhatNetworkName?: string,
