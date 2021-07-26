@@ -33,7 +33,7 @@ const { ethers } = require("ethers");
   - hardhatContracts: object following the hardhat deploy export format (Json with chainIds as keys, which have hardhat network names as keys, which contain arrays of contracts for each)
   - externalContracts: object with chainIds as keys, with an array of contracts for each
 */
-
+//testytest
 type Config = {
   chainId?: number,
   hardhatNetworkName?: string,
